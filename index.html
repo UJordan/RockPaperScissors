@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Player Selection
+        function getPlayerChoice() {
+            let choice = prompt("Choose rock, paper, or scissors");
+
+            if (choice.toLowerCase() === "rock") {
+                return "rock";
+            } else if (choice.toLowerCase() === "paper") {
+                return "paper";
+            } else if (choice.toLowerCase() === "scissors") {
+                return "scissors";
+            } else {
+                return "THAT'S NOT AN OPTION!!!";
+            }
+        }
+
+        // Computer Selection
+        function getComputerChoice() {
+            let choice = Math.random();
+
+            if (choice >= .01 && choice <= .33) {
+                return "rock";
+            } else if (choice >= .34 && choice <= .66) {
+                return "paper";
+            } else {
+                return "scissors"
+            }
+        }
+
+        // Results Section
+        let playerScore = 0;
+        let computerScore = 0;
+        let gameScore = "Your score is " + playerScore + " and the computers' score is " + computerScore;
+        
+
+        function playRound(playerChoice, computerChoice) {
+            console.log(playerChoice);
+            console.log(computerChoice);
+
+            if (playerChoice === "rock" && computerChoice === "scissors") {
+                return "You Win! rock beats paper";
+            } else if (playerChoice === "paper" && computerChoice === "rock") {
+                return "You Win! paper beats rock";
+            } else if (playerChoice === "scissors" && computerChoice === "paper") {
+                return "You Win! scissors beats paper";
+            } else if ((playerChoice === "rock" && computerChoice === "rock") || 
+            (playerChoice === "paper" && computerChoice === "paper") || 
+            (playerChoice === "scissors" && computerChoice === "scissors")) {
+                return "It's a tie!";
+            } else {
+                return "You Lose!";
+            }
+        }
+        
+        console.log(playRound(getPlayerChoice(), getComputerChoice()));
+
+
+        // Game Score Counter
+        // function game() {
+        //     for (let i = 1; i < 5; i++) {
+        //         if ()
+        //     }
+        // }
+
+        // game(playRound());
+
+    </script>
+    
+</body>
+</html>
